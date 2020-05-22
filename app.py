@@ -16,7 +16,7 @@ def home_page():
 # use get method to ['GET'] --> means load the pages. home_page functions, will return the index.html template. 
 @app.route('/<name>')
 def profile(name):
-	name = "dear " + name + " welcome to this Class"
+	name = "\n" + "dear " + name + " welcome to this Class !!"
 	return render_template('index.html', name=name)
 #line 17 above means if we type main page: https://ronaldportfolio.herokuapp.com/python_apps/ronald --> take the name --> ronald 
 # and the python will pass that to HTML --> index.html and instead of page 404 error say Hellow to that name --> in our case we pass "coder" 
