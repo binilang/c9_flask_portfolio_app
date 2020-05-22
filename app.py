@@ -12,11 +12,15 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def home_page():
 	return render_template('index.html')
-
+#the three line above means @app.route --> "for whom ever" come to the '/' --> "main page"
+# use get method to ['GET'] --> means load the pages. home_page functions, will return the index.html template. 
 @app.route('/<name>')
 def profile(name):
+	name = name + "welcome to this Class"
 	return render_template('index.html', name=name)
-
+#line 17 above means if we type main page: https://ronaldportfolio.herokuapp.com/python_apps/ronald --> take the name --> ronald 
+# and the python will pass that to HTML --> index.html and instead of page 404 error say Hellow to that name --> in our case we pass "coder" 
+# & we salute them halo "clever coder ronald" 
 
 @app.route('/add_numbers', methods=['GET','POST'])
 def add_numbers_post():
