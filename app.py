@@ -29,11 +29,7 @@ def add_numbers_post():
 	  if request.method == 'GET':
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
-  	      print(request.form['text'].split())
-	      number = request.form['text'].split()
-	      number_start = int(number[0])
-	      number_end = int(number[1])
-	      number_sequence = int(number[-1])
+  	      print(request.form['text'].split()
   	      total = 1
   	      try:
   	      	for str_num in request.form['text'].split():
