@@ -38,14 +38,14 @@ def add_numbers_post():
 	      	max_number = int(interval_input[1])
 	      	n_series = int(interval_input[-1])
   	      	#for str_num in request.form['text'].split():
-		for n_num in range (n_series) 
+		for n_num in range (n_series): 
 			min_number, max_number = max_number, min_number+max_number
 		total = min_number
-		total1 = max_number/min_number
+		#total1 = max_number/min_number
   	      		#total *= int(str_num)
   	      	return render_template('add_numbers.html', result=str(total)) #render_template('add_numbers.html', result1=str(total1))
   	      except ValueError:
-		return " Easy now !, please ensure your input in format of: 'start no'[ ]stop no[ ]n_sequence[ ]"
+		return " Easy now !, please ensure your input in format of: start no[ ]stop no[ ]n_sequence[ ]"
   	      	#return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 
 
