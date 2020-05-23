@@ -30,9 +30,12 @@ def add_numbers_post():
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
-  	      total = 0
+  	      total = 1
+		total1 = 0
   	      try:
   	      	for str_num in request.form['text'].split():
+			if total1 > int(str_num): 
+				total1 = int(str_num)
   	      		total *= int(str_num)
   	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
