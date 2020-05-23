@@ -4,7 +4,7 @@ import pytz # timezone
 import requests
 import os
 
-
+TOTAL1 = 0 
 
 app = Flask(__name__)
 
@@ -31,7 +31,6 @@ def add_numbers_post():
 	  elif request.method == 'POST':	
   	      print(request.form['text'].split())
   	      total = 1
-					total1 = 0
   	      try:
   	      	for str_num in request.form['text'].split():
   	      		total *= int(str_num)
