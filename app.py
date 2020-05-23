@@ -48,9 +48,11 @@ def shopping_list_post():
       return render_template('shopping_list.html')
     elif request.method == 'POST':
           print(request.form['text'].split())
+          
           shop_list = []
           try:
             for item in request.form['text'].split():
+              
               shop_list.append(item)
 
               
