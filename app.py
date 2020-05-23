@@ -3,12 +3,7 @@ import datetime
 import pytz # timezone 
 import requests
 import os
-import re
-max_number = 0
-min_number = 0 
-sequence_number = 0 
-count = 0
-word = {}
+
 
 
 app = Flask(__name__)
@@ -36,11 +31,9 @@ def add_numbers_post():
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
   	      total = 1
-	      the_list=[]
   	      try:
   	      	for str_num in request.form['text'].split():
-			the_list.append(int(str_num))
-  	      	total = max(str_num)
+  	      		total *= int(str_num)
   	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
