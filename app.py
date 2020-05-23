@@ -33,7 +33,7 @@ def add_numbers_post():
   	      total = 1
   	      try:
 	
-		interval_input = request.form['text'].split #retreived the string input and split them in to'interval_input list 
+		interval_input = request.form['text'].split() #retreived the string input and split them in to'interval_input list 
 		min_number = int(interval_input[0])
 	      	max_number = int(interval_input[1])
 	      	n_series = int(interval_input[-1])
