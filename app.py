@@ -30,12 +30,12 @@ def add_numbers_post():
 	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
+	      number = request.form['text'].split()
+	      number_start = int(number[0])
+	      number_end = int(number[1])
+	      number_sequence = int(number[-1])
   	      total = 1
   	      try:
-		number = request.form['text'].split()
-		number_start = int(number[0])
-		number_end = int(number[1])
-		number_sequence = int(number[-1])
   	      	for str_num in request.form['text'].split():
   	      		total *= int(str_num)
   	      	return render_template('add_numbers.html', result=str(total))
