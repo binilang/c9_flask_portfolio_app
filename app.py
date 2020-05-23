@@ -31,8 +31,6 @@ def add_numbers_post():
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
   	      total = 0
-		number =[]
-		number = request.form['text'].split()
   	      try:
   	      	for str_num in request.form['text'].split():
 			if total > int(st_num): 
