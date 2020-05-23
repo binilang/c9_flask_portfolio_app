@@ -27,25 +27,17 @@ def add_numbers_post():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
 	  if request.method == 'GET':
-			return render_template('add_numbers.html')
+	  	return render_template('add_numbers.html')
 	  elif request.method == 'POST':
-		print(request.form['text'].split())
-		total = 1
-	      #interval_input = request.form['text'].split() #retreived the string input and split them in to'interval_input list 
-	      #min_number = int(interval_input[0])
-	      #max_number = int(interval_input[1])
-	      #n_series = int(interval_input[-1])
+  	      print(request.form['text'].split())
+  	      total = 1
   	      try:
-		for str_num in request.form['text'].split():
-			total *= int(str_num)
-		#for n_num in range (n_series): 
-			#min_number, max_number = max_number, min_number+max_number
-		#total = min_number
-		#total1 =max_number/min_number
-  	      	return render_template('add_numbers.html', result=str(total)) #render_template('add_numbers.html', result1=str(total1))
+  	      	for str_num in request.form['text'].split():
+  	      		total *= int(str_num)
+  	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
-			return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
-		#return " Easy now !, please ensure your input in format of: start no[ ]stop no[ ]n_sequence[ ]"
+  	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
+
 
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
