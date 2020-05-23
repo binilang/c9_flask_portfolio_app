@@ -8,7 +8,6 @@ max_number = 0
 min_number = 0 
 sequence_number = 0 
 count = 0
-the_list = []
 word = {}
 
 
@@ -37,6 +36,7 @@ def add_numbers_post():
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
   	      total = 1
+	      the_list=[]
   	      try:
   	      	for str_num in request.form['text'].split():
 			the_list.append(int(str_num))
