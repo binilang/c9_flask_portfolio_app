@@ -31,12 +31,9 @@ def add_numbers_post():
 	  elif request.method == 'POST':
   	      print(request.form['text'].split())
   	      total = 1
-	      total1 = 0
   	      try:
   	      	for str_num in request.form['text'].split():
-			if total1 > int(str_num): 
-				total = int(str_num)
-  	      		#total *= int(str_num)
+  	      		total *= int(str_num)
   	      	return render_template('add_numbers.html', result=str(total))
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
@@ -44,6 +41,7 @@ def add_numbers_post():
 
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
+	
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
 
